@@ -1,0 +1,1549 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Hub Digital da Construção Civil | Poções - BA e região</title>
+    <meta
+      name="description"
+      content="Encontre profissionais da construção civil em Poções e região. Conheça serviços, portfólios e entre em contato diretamente."
+    />
+    <!-- Ícone da aba (favicon) -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/fGpKdPQB/logo.png" />
+    <link rel="apple-touch-icon" href="https://i.ibb.co/fGpKdPQB/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+      <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  </head>
+
+  <body>
+    <!-- ===== MODAL DE PROJETO COM CARROSSEL ===== -->
+    <div class="project-modal" id="projectModal" onclick="closeProjectModal()">
+      <div class="project-modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeProjectModal()">✕</button>
+        <div class="carousel-container">
+          <div class="carousel-slides" id="carouselSlides"></div>
+          <button class="carousel-btn prev" onclick="changeSlide(-1)">‹</button>
+          <button class="carousel-btn next" onclick="changeSlide(1)">›</button>
+          <div class="carousel-counter" id="carouselCounter">1 / 1</div>
+          <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+        <div class="modal-body">
+          <span class="badge" id="modalProjectBadge">Projeto</span>
+          <h2 class="title" id="modalProjectTitle">Título do Projeto</h2>
+          <div class="category" id="modalProjectCategory">Categoria</div>
+          <p class="description" id="modalProjectDescription">
+            Descrição detalhada do projeto...
+          </p>
+          <div class="details" id="modalProjectDetails">
+            <div class="detail">
+              <div class="label">Profissional</div>
+              <div class="value" id="modalProjectProfessional">-</div>
+            </div>
+            <div class="detail">
+              <div class="label">Data</div>
+              <div class="value" id="modalProjectDate">-</div>
+            </div>
+            <div class="detail">
+              <div class="label">Localização</div>
+              <div class="value" id="modalProjectLocation">-</div>
+            </div>
+            <div class="detail">
+              <div class="label">Duração</div>
+              <div class="value" id="modalProjectDuration">-</div>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary"
+            id="modalProjectWhatsApp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg"
+              alt="WhatsApp"
+              style="width: 20px; height: 20px; filter: brightness(0) invert(1)"
+            />
+            Solicitar Orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header" role="banner">
+      <div class="container">
+        <a
+          href="#"
+          class="logo"
+          id="logoLink"
+          aria-label="Hub Digital da Construção Civil"
+        >
+          <span class="logo-icon">
+            <img src="https://i.ibb.co/fGpKdPQB/logo.png" alt="Logo" />
+          </span>
+          <span class="logo-text">
+            HUB DIGITAL
+            <span class="sub">CONSTRUÇÃO CIVIL</span>
+          </span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Navegação principal">
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#profissionais">Profissionais</a>
+          <a href="#seguranca">Segurança</a>
+          <a href="#sobre">Sobre</a>
+          <div class="nav-actions">
+            <a href="#buscar" class="btn btn-primary"
+              >Encontrar profissional</a
+            >
+          </div>
+        </nav>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      role="navigation"
+      aria-label="Menu mobile"
+    >
+      <button class="close-btn" id="closeMenu" aria-label="Fechar menu">
+        ✕
+      </button>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#profissionais">Profissionais</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#buscar" class="btn btn-primary btn-block"
+        >Encontrar profissional</a
+      >
+    </div>
+
+    <!-- ===== LANDING PAGE ===== -->
+    <div id="landingPage" class="page-section">
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="inicio">
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-badge">
+              <img src="https://i.ibb.co/fGpKdPQB/logo.png" alt="Inovação" />
+              INOVAÇÃO PARA A CONSTRUÇÃO CIVIL
+            </span>
+            <h1 class="hero-title">
+              Sua obra começa com o
+              <span class="highlight">profissional certo.</span>
+            </h1>
+            <p class="hero-sub">
+              Encontre profissionais da construção civil, conheça seus trabalhos
+              e entre em contato diretamente para solicitar um orçamento.
+            </p>
+            <div class="hero-actions">
+              <a href="#buscar" class="btn btn-primary btn-lg"
+                >Encontrar profissional</a
+              >
+            </div>
+            <div class="hero-features">
+              <span
+                ><img src="https://i.ibb.co/W4v7sT2K/icons-1.png" alt="Local" />
+                Profissionais locais</span
+              >
+              <span
+                ><img
+                  src="https://i.ibb.co/mFYcRWpq/icons-2.png"
+                  alt="Portfólio"
+                />
+                Portfólios de trabalhos</span
+              >
+              <span
+                ><img
+                  src="https://i.ibb.co/gZ5ndqL1/icons-3.png"
+                  alt="Contato"
+                />
+                Contato direto</span
+              >
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <img
+              src="https://i.ibb.co/x8FGkvZx/capa.png"
+              alt="Profissional da construção civil em uma obra"
+              class="main-image"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div class="hero-floating-card" style="top: 12%; right: -8%">
+              <img
+                src="https://i.ibb.co/1GhBJfx7/icons-4.png"
+                alt="Verificado"
+              />
+              <span>Perfil verificado</span>
+            </div>
+            <div class="hero-floating-card" style="bottom: 20%; left: -8%">
+              <img
+                src="https://i.ibb.co/LWxyZK0/icon-4.png"
+                alt="Localização"
+              />
+              <span>Poções e região</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEARCH ===== -->
+      <section class="search-section" id="buscar">
+        <div class="container">
+          <h3 class="h3">O que você precisa para sua obra?</h3>
+          <form class="search-form" role="search" id="searchForm">
+            <div class="field">
+              <label for="search-service">Serviço</label>
+              <input
+                type="text"
+                id="search-service"
+                placeholder="Digite o serviço..."
+                aria-label="Digite o serviço desejado"
+              />
+            </div>
+            <div class="field">
+              <label for="search-category">Categoria</label>
+              <select id="search-category" aria-label="Selecione uma categoria">
+                <option value="">Todas</option>
+                <option value="pedreiro">Pedreiro</option>
+                <option value="pintor">Pintor</option>
+                <option value="eletricista">Eletricista / Refrigeração</option>
+                <option value="manutencao">Manutenção Predial</option>
+                <option value="gesseiro">Gesseiro</option>
+                <option value="serralheiro">Soldador / Serralheiro</option>
+                <option value="telhadista">Telhadista</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="search-location">Localização</label>
+              <input
+                type="text"
+                id="search-location"
+                placeholder="Poções e região"
+                aria-label="Digite sua localização"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <img
+                src="https://i.ibb.co/rGpzqHVt/icons-6.png"
+                alt=""
+                width="20"
+                height="20"
+              />
+              <span class="btn-label">Buscar</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===== CATEGORIAS ===== -->
+      <section class="categories" id="categorias">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="h2">Encontre profissionais por categoria</h2>
+            <p class="body" style="color: var(--gray-600)">
+              Do acabamento à instalação, encontre quem pode ajudar na sua obra.
+            </p>
+          </div>
+          <div class="categories-grid">
+            <div class="category-card reveal" data-category="pedreiro">
+              <img src="https://i.ibb.co/v4Lc5CqX/pedreiro.png" alt="Pedreiro" />
+              <div class="name">Pedreiro</div>
+              <div class="desc">Construção, hidráulica e reforma</div>
+            </div>
+            <div class="category-card reveal" data-category="pintor">
+              <img src="https://i.ibb.co/DnQ8FCN/pintor.png" alt="Pintor" />
+              <div class="name">Pintor</div>
+              <div class="desc">Acabamento e cor</div>
+            </div>
+            <div class="category-card reveal" data-category="eletricista">
+              <img src="https://i.ibb.co/Fq0yjsPK/eletricista.png" alt="Eletricista" />
+              <div class="name">Eletricista</div>
+              <div class="desc">Elétrica e refrigeração</div>
+            </div>
+            <div class="category-card reveal" data-category="manutencao">
+              <img src="https://i.ibb.co/1fP5St02/encanador.png" alt="Manutenção Predial" />
+              <div class="name">Manutenção Predial</div>
+              <div class="desc">Reparos e pequenas obras</div>
+            </div>
+            <div class="category-card reveal" data-category="gesseiro">
+              <img
+                src="https://i.ibb.co/HLc3k7BL/gesseiro.png"
+                alt="Gesseiro"
+              />
+              <div class="name">Gesseiro</div>
+              <div class="desc">Drywall e forro</div>
+            </div>
+            <div class="category-card reveal" data-category="serralheiro">
+              <img src="https://i.ibb.co/sJXZsGDJ/soldador.png" alt="Soldador" />
+              <div class="name">Soldador</div>
+              <div class="desc">Serralheria e estruturas metálicas</div>
+            </div>
+            <div class="category-card reveal" data-category="telhadista">
+              <img src="https://i.ibb.co/Z1wZzBHk/telhadistas.png" alt="Telhadista" />
+              <div class="name">Telhadista</div>
+              <div class="desc">Coberturas e telhados</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SOLUÇÃO ===== -->
+      <section class="solution-transition" id="sobre">
+        <div class="container reveal">
+          <span class="badge"> Foi pensando nisso que surgiu o Hub. </span>
+
+          <h2 class="h2">
+            Uma forma mais simples de conectar quem precisa de uma obra com quem
+            sabe executá-la.
+          </h2>
+
+          <div class="solution-flow">
+            <span class="step">
+              <img src="https://i.ibb.co/3yK3gJt1/icons-9.png" alt="Cliente" />
+              Cliente
+            </span>
+
+            <span class="arrow">→</span>
+
+            <span
+              class="step"
+              style="background: var(--primary-orange); color: var(--white)"
+            >
+              <img src="https://i.ibb.co/fGpKdPQB/logo.png" alt="Hub" />
+              Hub Digital
+            </span>
+
+            <span class="arrow">→</span>
+
+            <span class="step">
+              <img
+                src="https://i.ibb.co/dqFzhDt/icons-8.png"
+                alt="Profissional"
+              />
+              Profissional
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== COMO FUNCIONA ===== -->
+      <section class="how-it-works" id="como-funciona">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="h2">Como o Hub funciona?</h2>
+          </div>
+          <div class="how-grid">
+            <div class="how-card reveal">
+              <div class="step-num">01</div>
+              <img src="https://i.ibb.co/wFqPN9GJ/icons-13.png" alt="Busque" />
+              <h3 class="h3">Busque</h3>
+              <p>Pesquise o serviço que você precisa.</p>
+            </div>
+            <div class="how-card reveal">
+              <div class="step-num">02</div>
+              <img src="https://i.ibb.co/NgsSx4bx/icons-12.png" alt="Conheça" />
+              <h3 class="h3">Conheça</h3>
+              <p>Veja perfil, especialidades e portfólio.</p>
+            </div>
+            <div class="how-card reveal">
+              <div class="step-num">03</div>
+              <img src="https://i.ibb.co/6cs2xR8R/icons-11.png" alt="Escolha" />
+              <h3 class="h3">Escolha</h3>
+              <p>Compare profissionais e conheça seus trabalhos.</p>
+            </div>
+            <div class="how-card reveal">
+              <div class="step-num">04</div>
+              <img src="https://i.ibb.co/4RnJN72Z/icons-5.png" alt="Converse" />
+              <h3 class="h3">Converse</h3>
+              <p>Solicite um orçamento diretamente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROFISSIONAIS ===== -->
+      <section class="professionals" id="profissionais">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="h2">Conheça alguns profissionais</h2>
+            <p class="body" style="color: var(--gray-600)">
+              Veja quem já está preparado para apresentar seu trabalho.
+            </p>
+          </div>
+          <div class="professionals-grid" id="professionalsGrid">
+            <!-- CARD 1 - Ronaldo Coelho -->
+            <div class="professional-card reveal" data-id="1" data-category="pedreiro telhadista eletricista">
+              <img src="assets/img/perfil/ronaldo.jpg" alt="Foto de Ronaldo Coelho" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Ronaldo Coelho</div>
+                <div class="profession">Pedreiro / Telhadista / Eletricista / Carpinteiro</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Planalto, Poções - BA e região
+                </div>
+                <div class="tags">
+                  <span>Alvenaria</span>
+                  <span>Concretagem</span>
+                  <span>Contrapiso</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('1')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577998045834?text=Ol%C3%A1%20Ronaldo%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Ronaldo Coelho no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2 - Leo Construção -->
+            <div class="professional-card reveal" data-id="2" data-category="pedreiro">
+              <img src="assets/img/perfil/leonardo.jpg" alt="Foto de Leo Construção" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Leo Construção</div>
+                <div class="profession">Pedreiro</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Poções - BA e região
+                </div>
+                <div class="tags">
+                  <span>Alvenaria</span>
+                  <span>Hidráulica</span>
+                  <span>Piso Porcelanato</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('2')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577988542624?text=Ol%C3%A1%20Leo%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Leo Construção no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 - Ernandes Amorim -->
+            <div class="professional-card reveal" data-id="3" data-category="pedreiro telhadista">
+              <img src="assets/img/perfil/ernandes.jpg" alt="Foto de Ernandes Amorim" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Ernandes Amorim</div>
+                <div class="profession">Pedreiro / Carpinteiro / Telhadista</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Poções - BA e região
+                </div>
+                <div class="tags">
+                  <span>Carpintaria</span>
+                  <span>Alvenaria</span>
+                  <span>Azulejo</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('3')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577997007751?text=Ol%C3%A1%20Ernandes%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Ernandes Amorim no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4 - Aerico Rocha (Tuta) -->
+            <div class="professional-card reveal" data-id="4" data-category="serralheiro">
+              <img src="assets/img/perfil/aerico.jpg" alt="Foto de Aerico Rocha (Tuta)" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Aerico Rocha (Tuta)</div>
+                <div class="profession">Soldador / Serralheiro</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Poções - BA e região
+                </div>
+                <div class="tags">
+                  <span>Cobertura Metálica</span>
+                  <span>Estruturas Metálicas</span>
+                  <span>Soldagem</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('4')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577999807057?text=Ol%C3%A1%20Aerico%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Aerico Rocha (Tuta) no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 5 - Adiel Meira -->
+            <div class="professional-card reveal" data-id="5" data-category="manutencao eletricista pintor">
+              <img src="assets/img/perfil/adiel.jpg" alt="Foto de Adiel Meira" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Adiel Meira</div>
+                <div class="profession">Manutenção Predial</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Poções - BA
+                </div>
+                <div class="tags">
+                  <span>Elétrica Residencial</span>
+                  <span>Forro</span>
+                  <span>Pintura</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('5')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577988555791?text=Ol%C3%A1%20Adiel%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Adiel Meira no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 6 - Vagner Telhados -->
+            <div class="professional-card reveal" data-id="6" data-category="telhadista">
+              <img src="assets/img/perfil/vagner.jpg" alt="Foto de Vagner Telhados" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Vagner Telhados</div>
+                <div class="profession">Telhadista / Carpinteiro</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Poções - BA e região
+                </div>
+                <div class="tags">
+                  <span>Telhados</span>
+                  <span>Estrutura de Madeira</span>
+                  <span>Coberturas</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('6')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577981169902?text=Ol%C3%A1%20Vagner%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Vagner Telhados no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 7 - Ibraim Alves -->
+            <div class="professional-card reveal" data-id="7" data-category="eletricista">
+              <img src="assets/img/perfil/ibraim.jpg" alt="Foto de Ibraim Alves" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Ibraim Alves</div>
+                <div class="profession">Eletrotécnico / Ar-condicionado</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Poções, Vitória da Conquista e região
+                </div>
+                <div class="tags">
+                  <span>Ar-condicionado</span>
+                  <span>Instalação Elétrica</span>
+                  <span>Climatização</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('7')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577981561248?text=Ol%C3%A1%20Ibraim%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Ibraim Alves no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 8 - Alex Pinturas -->
+            <div class="professional-card reveal" data-id="8" data-category="pintor">
+              <img src="assets/img/perfil/sandro.jpg" alt="Foto de Alex Pinturas" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Alex Pinturas</div>
+                <div class="profession">Pintor</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Santa Rita, Poções - BA e região
+                </div>
+                <div class="tags">
+                  <span>Massa Corrida</span>
+                  <span>Acrílica</span>
+                  <span>Texturas</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('8')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577981068321?text=Ol%C3%A1%20Alex%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Alex Pinturas no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 9 - Mateus Pintor -->
+            <div class="professional-card reveal" data-id="9" data-category="pintor">
+              <img src="assets/img/perfil/mateus.jpg" alt="Foto de Mateus Pintor" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Mateus Pintor</div>
+                <div class="profession">Pintor / Quadras Poliesportivas</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Poções - BA e vizinhanças
+                </div>
+                <div class="tags">
+                  <span>Pintura Residencial</span>
+                  <span>Texturas</span>
+                  <span>Quadras Poliesportivas</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('9')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577988260163?text=Ol%C3%A1%20Mateus%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Mateus Pintor no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 10 - Dário Decorações em Drywall -->
+            <div class="professional-card reveal" data-id="10" data-category="gesseiro">
+              <img src="assets/img/perfil/dario.jpg" alt="Foto de Dário Decorações em Drywall" class="avatar" loading="lazy" style="object-position: center 35%" />
+              <div class="info">
+                <div class="name">Dário Decorações em Drywall</div>
+                <div class="profession">Gesseiro / Drywall</div>
+                <div class="location">
+                  <img src="https://i.ibb.co/LWxyZK0/icon-4.png" alt="" />
+                  Poções, Mirante, Bom Jesus da Serra e região
+                </div>
+                <div class="tags">
+                  <span>Drywall</span>
+                  <span>Rebaixamento de Tetos</span>
+                  <span>Molduras</span>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-outline ver-perfil" onclick="openProfile('10')" style="flex: 1">Ver perfil</button>
+                  <a href="https://wa.me/5577981281068?text=Ol%C3%A1%20D%C3%A1rio%21%20Vi%20seu%20perfil%20no%20Hub%20Digital%20da%20Constru%C3%A7%C3%A3o%20Civil%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="btn btn-success" target="_blank" rel="noopener noreferrer" aria-label="Chamar Dário Decorações em Drywall no WhatsApp">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" style="width: 20px; height: 20px; filter: brightness(0) invert(1);" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-empty" id="searchEmpty" hidden>
+            <p>Nenhum profissional encontrado para essa busca.</p>
+            <button type="button" class="btn btn-outline" id="searchClear">Limpar busca</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PORTFOLIO ===== -->
+      <section class="portfolio" id="portfolio">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="h2">O trabalho fala por si.</h2>
+            <p class="body" style="color: var(--gray-600)">
+              Veja exemplos de serviços e transformações realizadas por
+              profissionais.
+            </p>
+          </div>
+          <div class="portfolio-grid">
+            <div class="portfolio-item reveal">
+              <img src="assets/img/obras/ronaldo-cerimonial-monte-siao/01.jpg" alt="Cerimonial Monte Sião" loading="lazy" />
+              <div class="overlay">
+                <h3 class="h3">Cerimonial Monte Sião</h3>
+                <span class="small">Pedreiro</span>
+                <button class="btn btn-white ver-projeto" onclick="openProjectModal('Cerimonial Monte Sião')">Ver projeto</button>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img src="assets/img/obras/aerico-cobertura-banco-caixa/01.jpg" alt="Cobertura Metálica: Caixa Econômica Federal" loading="lazy" />
+              <div class="overlay">
+                <h3 class="h3">Cobertura Metálica: Caixa Econômica Federal</h3>
+                <span class="small">Serralheiro</span>
+                <button class="btn btn-white ver-projeto" onclick="openProjectModal('Cobertura Metálica: Caixa Econômica Federal')">Ver projeto</button>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img src="assets/img/obras/mateus-quadra-conego-pithon/01.jpg" alt="Quadra Cônego Pithon" loading="lazy" />
+              <div class="overlay">
+                <h3 class="h3">Quadra Cônego Pithon</h3>
+                <span class="small">Pintor</span>
+                <button class="btn btn-white ver-projeto" onclick="openProjectModal('Quadra Cônego Pithon')">Ver projeto</button>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img src="assets/img/obras/vagner-regiao-pau-de-colher/01.jpg" alt="Telhado: Região do Pau de Colher" loading="lazy" />
+              <div class="overlay">
+                <h3 class="h3">Telhado: Região do Pau de Colher</h3>
+                <span class="small">Telhadista</span>
+                <button class="btn btn-white ver-projeto" onclick="openProjectModal('Telhado: Região do Pau de Colher')">Ver projeto</button>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img src="assets/img/obras/dario-obra-galpao-mirante-ba/01.jpg" alt="Forro em Galpão: Mirante" loading="lazy" />
+              <div class="overlay">
+                <h3 class="h3">Forro em Galpão: Mirante</h3>
+                <span class="small">Gesseiro</span>
+                <button class="btn btn-white ver-projeto" onclick="openProjectModal('Forro em Galpão: Mirante')">Ver projeto</button>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img src="assets/img/obras/ibraim-instalacoes-colegio-roberto-santos/01.jpg" alt="Ar-condicionado: Colégio Roberto Santos" loading="lazy" />
+              <div class="overlay">
+                <h3 class="h3">Ar-condicionado: Colégio Roberto Santos</h3>
+                <span class="small">Ar-condicionado</span>
+                <button class="btn btn-white ver-projeto" onclick="openProjectModal('Ar-condicionado: Colégio Roberto Santos')">Ver projeto</button>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img src="assets/img/obras/leonardo-acabamento-de-cozinha/01.jpg" alt="Acabamento de Cozinha" loading="lazy" />
+              <div class="overlay">
+                <h3 class="h3">Acabamento de Cozinha</h3>
+                <span class="small">Pedreiro</span>
+                <button class="btn btn-white ver-projeto" onclick="openProjectModal('Acabamento de Cozinha')">Ver projeto</button>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img src="assets/img/obras/sandro-reforma-residencial/01.jpg" alt="Reforma Residencial" loading="lazy" />
+              <div class="overlay">
+                <h3 class="h3">Reforma Residencial</h3>
+                <span class="small">Pintor</span>
+                <button class="btn btn-white ver-projeto" onclick="openProjectModal('Reforma Residencial')">Ver projeto</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ANTES E DEPOIS (CARROSSEL DUPLO SINCRONIZADO) ===== -->
+      <section class="before-after" id="antes-depois">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="h2">Veja as transformações</h2>
+            <p style="color: var(--gray-600); font-size: 15px; margin-top: 4px">
+              Antes e depois de projetos realizados
+            </p>
+          </div>
+
+          <div class="ba-carousel-wrapper">
+            <div class="ba-track" id="baTrack">
+              <!-- Slide 1 -->
+              <div class="ba-slide">
+                <div class="ba-item">
+                  <span class="label">ANTES</span>
+                  <img src="assets/img/antes-depois/1-antes.jpg" alt="Antes: Revestimento de escada — Ernandes Amorim" loading="lazy" />
+                </div>
+                <div class="ba-item">
+                  <span class="label depois">DEPOIS</span>
+                  <img src="assets/img/antes-depois/1-depois.jpg" alt="Depois: Revestimento de escada — Ernandes Amorim" loading="lazy" />
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="ba-slide">
+                <div class="ba-item">
+                  <span class="label">ANTES</span>
+                  <img src="assets/img/antes-depois/2-antes.jpg" alt="Antes: Telhado, Ribeirão do Peixe — Vagner Telhados" loading="lazy" />
+                </div>
+                <div class="ba-item">
+                  <span class="label depois">DEPOIS</span>
+                  <img src="assets/img/antes-depois/2-depois.jpg" alt="Depois: Telhado, Ribeirão do Peixe — Vagner Telhados" loading="lazy" />
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="ba-slide">
+                <div class="ba-item">
+                  <span class="label">ANTES</span>
+                  <img src="assets/img/antes-depois/3-antes.jpg" alt="Antes: Repintura de quadra, Lagoa da Serra — Mateus Pintor" loading="lazy" />
+                </div>
+                <div class="ba-item">
+                  <span class="label depois">DEPOIS</span>
+                  <img src="assets/img/antes-depois/3-depois.jpg" alt="Depois: Repintura de quadra, Lagoa da Serra — Mateus Pintor" loading="lazy" />
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="ba-slide">
+                <div class="ba-item">
+                  <span class="label">ANTES</span>
+                  <img src="assets/img/antes-depois/4-antes.jpg" alt="Antes: Massa corrida e pintura, Farmácia Ultra Econômica — Alex Pinturas" loading="lazy" />
+                </div>
+                <div class="ba-item">
+                  <span class="label depois">DEPOIS</span>
+                  <img src="assets/img/antes-depois/4-depois.jpg" alt="Depois: Massa corrida e pintura, Farmácia Ultra Econômica — Alex Pinturas" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <button class="ba-carousel-btn prev" onclick="moveBaCarousel(-1)">
+              ‹
+            </button>
+            <button class="ba-carousel-btn next" onclick="moveBaCarousel(1)">
+              ›
+            </button>
+          </div>
+
+          <div class="ba-dots" id="baDots"></div>
+        </div>
+      </section>
+
+      <!-- ===== SEGURANÇA ===== -->
+
+      <section class="security" id="seguranca">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="h2">Mais segurança para sua obra.</h2>
+
+            <p class="body" style="color: var(--gray-600)">
+              Informação também faz parte de uma contratação segura. Confira
+              orientações de órgãos oficiais:
+            </p>
+          </div>
+
+          <div class="security-grid">
+            <div class="security-card reveal">
+              <img
+                src="https://i.ibb.co/zVHZ77h6/seguranca.png"
+                alt=""
+                class="icon-security"
+              />
+
+              <h3 class="h3">
+                <img
+                  src="https://i.ibb.co/6R59ZTZF/icons-17.png"
+                  alt="Pagamento"
+                />
+
+                Confirme o pagamento
+              </h3>
+
+              <p>
+                Confira o valor e o destinatário no app do seu banco antes de
+                confirmar o pagamento.
+              </p>
+
+              <a
+                href="https://www.bcb.gov.br/estabilidadefinanceira/pix-seguranca"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-external-link"
+              >
+                <img src="https://i.ibb.co/ZzHTwKj4/icons.png" alt="Link" />
+
+                Orientação do Banco Central
+              </a>
+            </div>
+
+            <div class="security-card reveal">
+              <img
+                src="https://i.ibb.co/zVHZ77h6/seguranca.png"
+                alt=""
+                class="icon-security"
+              />
+
+              <h3 class="h3">
+                <img
+                  src="https://i.ibb.co/VpJp9mkB/icons-16.png"
+                  alt="Formalize"
+                />
+
+                Formalize o serviço
+              </h3>
+
+              <p>
+                Defina valores, escopo e prazos em um contrato claro entre as
+                partes.
+              </p>
+
+              <a
+                href="https://www.ba.gov.br/justica/74/prestacao-de-servico"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-external-link"
+              >
+                <img src="https://i.ibb.co/ZzHTwKj4/icons.png" alt="Link" />
+
+                Modelo de contrato - Procon
+              </a>
+            </div>
+
+            <div class="security-card reveal">
+              <img
+                src="https://i.ibb.co/zVHZ77h6/seguranca.png"
+                alt=""
+                class="icon-security"
+              />
+
+              <h3 class="h3">
+                <img
+                  src="https://i.ibb.co/Wv3p8VVr/icons-15.png"
+                  alt="Organize"
+                />
+
+                Organize as compras
+              </h3>
+
+              <p>
+                Defina previamente quem será responsável pelos materiais e
+                equipamentos.
+              </p>
+
+              <a
+                href="https://www.gov.br/pt-br/servicos/consultar-nota-fiscal-de-servico-eletronica"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-external-link"
+              >
+                <img src="https://i.ibb.co/ZzHTwKj4/icons.png" alt="Link" />
+
+                Consultar nota fiscal - Gov.br
+              </a>
+            </div>
+
+            <div class="security-card reveal">
+              <img
+                src="https://i.ibb.co/zVHZ77h6/seguranca.png"
+                alt=""
+                class="icon-security"
+              />
+
+              <h3 class="h3">
+                <img
+                  src="https://i.ibb.co/1GqD4GgD/icons-8.png"
+                  alt="Registre"
+                />
+
+                Registre a entrega
+              </h3>
+
+              <p>
+                Documente a conclusão do serviço com fotos e um termo de
+                recebimento.
+              </p>
+
+              <a
+                href="https://www.consumidor.gov.br/pages/principal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-external-link"
+              >
+                <img src="https://i.ibb.co/ZzHTwKj4/icons.png" alt="Link" />
+
+                Portal do Consumidor - Gov.br
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-center reveal">
+            <a
+              href="https://www.consumidor.gov.br/pages/principal/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              <img
+                src="https://i.ibb.co/ZzHTwKj4/icons.png"
+                alt="Segurança"
+                style="
+                  width: 20px;
+                  height: 20px;
+                  object-fit: contain;
+                  display: block;
+                "
+              />
+
+              Portal do Consumidor - consumidor.gov.br
+            </a>
+          </div>
+
+          <p class="disclaimer">
+            <strong>⚠️ Importante:</strong>
+            O Hub Digital não oferece proteção jurídica absoluta. As orientações
+            acima são de fontes oficiais (Banco Central, Procon, Gov.br) e
+            servem como referência para uma contratação mais segura. Consulte
+            sempre um profissional jurídico para orientações específicas sobre
+            seu contrato.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="faq" id="faq">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="h2">Perguntas frequentes</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                Como encontro um profissional? <span class="icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Use o campo de busca logo abaixo do início da página. Digite o serviço
+                desejado, filtre por categoria e localização.
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                Como solicito um orçamento? <span class="icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Acesse o perfil do profissional de seu interesse e clique no
+                botão de WhatsApp para iniciar a conversa.
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                Os profissionais são verificados? <span class="icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Sim, todos os profissionais da plataforma passam por uma triagem
+                e verificação realizada pela equipe do Hub Digital.
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                O Hub realiza pagamentos? <span class="icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Não. O Hub é uma plataforma de conexão, os pagamentos são
+                combinados diretamente entre cliente e profissional.
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                O Hub garante a qualidade do serviço?
+                <span class="icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Não garantimos a qualidade. Recomendamos avaliar portfólios e
+                conversar com os profissionais antes de contratar.
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                Como posso me tornar um profissional do Hub?
+                <span class="icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                A seleção de profissionais é feita pela equipe do Hub Digital, com
+                base nas informações e nos portfólios enviados pelos próprios
+                profissionais.
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                Como evitar golpes? <span class="icon">▼</span>
+              </button>
+              <div class="faq-answer">
+                Siga nossas orientações de segurança na seção "Segurança" acima,
+                com links para órgãos oficiais como Procon, Banco Central e
+                Gov.br.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CTA FINAL ===== -->
+      <section class="cta-final" id="cta-final">
+        <div class="container reveal">
+          <h2 class="h2">Pronto para começar?</h2>
+          <p>
+            Encontre um profissional para sua obra e solicite um orçamento
+            diretamente.
+          </p>
+          <div class="options">
+            <div class="option" style="max-width: 500px">
+              <img
+                src="https://i.ibb.co/3yK3gJt1/icons-9.png"
+                alt="Cliente"
+                style="
+                  display: block;
+                  margin: 0 auto 8px;
+                "
+              />
+              <h3 class="h3">Cliente</h3>
+              <p style="opacity: 0.8; font-size: 15px">
+                Encontre profissionais qualificados para sua obra.
+              </p>
+              <a href="#profissionais" class="btn btn-primary btn-lg"
+                >Ver profissionais</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ===== FIM LANDING PAGE ===== -->
+
+<!-- ===== PERFIL PROFISSIONAL ===== -->
+
+<section class="profile-section" id="profileSection">
+  <div class="container">
+
+    <div style="margin-bottom: 16px">
+      <button class="btn-back" onclick="closeProfile()">
+        ← Voltar para profissionais
+      </button>
+    </div>
+
+    <div class="profile-card">
+
+      <div class="profile-header">
+
+        <img
+          src=""
+          alt="Foto do profissional"
+          class="avatar"
+          id="profileAvatar"
+        />
+
+        <div class="info">
+
+          <h1 id="profileName">
+            Nome
+
+            <span class="badge">
+              <img
+                src="https://i.ibb.co/zpmFvpp/icons-4.png"
+                alt=""
+                aria-hidden="true"
+              />
+              Verificado
+            </span>
+          </h1>
+
+          <div class="profession" id="profileProfession">
+            Profissão
+          </div>
+
+          <div class="location" id="profileLocation">
+            <img
+              src="https://i.ibb.co/8LrxMqTs/icon-4.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <span>Localização</span>
+          </div>
+
+          <div class="actions">
+
+            <a
+              href="#"
+              class="btn btn-success"
+              id="profileWhatsApp"
+            >
+              <img
+                src="https://www.vozdobico.com.br/wp-content/uploads/2017/04/whatsapp-logo-icone.png"
+                alt=""
+                aria-hidden="true"
+              />
+              WhatsApp
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="profile-tabs" id="profileTabs">
+
+        <button class="tab-btn active" data-tab="portfolio">
+
+          <img
+            src="https://i.ibb.co/4gYCHbtP/icons-20.png"
+            alt=""
+            aria-hidden="true"
+          />
+
+          Portfólio
+
+          <span class="badge" id="portfolioBadge">
+            4
+          </span>
+
+        </button>
+
+        <button class="tab-btn" data-tab="sobre">
+
+          <img
+            src="https://i.ibb.co/Cp4KmzVv/icons-18.png"
+            alt=""
+            aria-hidden="true"
+          />
+
+          Sobre
+
+        </button>
+
+        <button class="tab-btn" data-tab="servicos">
+
+          <img
+            src="https://i.ibb.co/pBQQRwws/icons-19.png"
+            alt=""
+            aria-hidden="true"
+          />
+
+          Serviços
+
+          <span class="badge" id="servicesBadge">
+            4
+          </span>
+
+        </button>
+
+      </div>
+
+      <div class="profile-body">
+
+        <div class="tab-content active" id="tab-portfolio">
+
+          <div
+            style="
+              margin-bottom: 16px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 8px;
+            "
+          >
+
+            <h3>Portfólio de Trabalhos</h3>
+
+            <span
+              style="
+                color: var(--gray-600);
+                font-size: 14px;
+              "
+              id="portfolioCount"
+            >
+              4 projetos
+            </span>
+
+          </div>
+
+          <div
+            class="profile-portfolio-grid"
+            id="profilePortfolioGrid"
+          ></div>
+
+        </div>
+
+        <div class="tab-content" id="tab-sobre">
+
+          <div class="about-grid">
+
+            <div class="about-bio">
+
+              <h3>Sobre mim</h3>
+
+              <p id="profileBio">
+                Carregando informações...
+              </p>
+
+              <h3 style="margin-top: 24px">
+                Áreas de atuação
+              </h3>
+
+              <p id="profileFormacao">
+                Carregando...
+              </p>
+
+              <p
+                id="profileExperiencia"
+                style="margin-top: 8px"
+              ></p>
+
+              <h3 style="margin-top: 24px">
+                Especialidades
+              </h3>
+
+              <div
+                class="about-tags"
+                id="profileTags"
+              ></div>
+
+            </div>
+
+            <div class="about-details">
+
+              <h3>Informações Gerais</h3>
+
+              <div class="detail-item">
+
+                <span class="label">
+
+                  <img
+                    src="https://i.ibb.co/8LrxMqTs/icon-4.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  Localização
+
+                </span>
+
+                <span
+                  class="value"
+                  id="detailLocation"
+                >
+                  -
+                </span>
+
+              </div>
+
+              <div class="detail-item">
+
+                <span class="label">
+
+                  <img
+                    src="https://i.ibb.co/x8D8s82J/Experi-ncia.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  Atuação
+
+                </span>
+
+                <span
+                  class="value"
+                  id="detailExperiencia"
+                >
+                  -
+                </span>
+
+              </div>
+
+              <div class="detail-item">
+
+                <span class="label">
+
+                  <img
+                    src="https://i.ibb.co/mFCFHbwL/Contato.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  Contato
+
+                </span>
+
+                <span
+                  class="value"
+                  id="detailContato"
+                >
+                  -
+                </span>
+
+              </div>
+
+              <div class="detail-item">
+
+                <span class="label">
+
+                  <img
+                    src="https://i.ibb.co/vCpNbjYd/Email.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  Email
+
+                </span>
+
+                <span
+                  class="value"
+                  id="detailEmail"
+                >
+                  -
+                </span>
+
+              </div>
+
+              <div class="detail-item">
+
+                <span class="label">
+
+                  <img
+                    src="https://i.ibb.co/zpmFvpp/icons-4.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  Verificado
+
+                </span>
+
+                <span
+                  class="value verified-value"
+                >
+                  ✓ Sim
+                </span>
+
+              </div>
+
+              <div class="detail-item">
+
+                <span class="label">
+
+                  <img
+                    src="https://i.ibb.co/gMTVGTkq/Categoria.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  Categoria
+
+                </span>
+
+                <span
+                  class="value"
+                  id="detailCategoria"
+                >
+                  -
+                </span>
+
+              </div>
+
+              <div class="detail-item">
+
+                <span class="label">
+
+                  <img
+                    src="https://i.ibb.co/0jV042m6/Disponivel.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  Disponível
+
+                </span>
+
+                <span
+                  class="value available-value"
+                >
+                  Sim
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="tab-content" id="tab-servicos">
+
+          <div style="margin-bottom: 16px">
+
+            <h3>Serviços Oferecidos</h3>
+
+            <p
+              style="
+                color: var(--gray-600);
+                font-size: 14px;
+              "
+            >
+              Conheça os serviços que ofereço para sua obra.
+            </p>
+
+          </div>
+
+          <div
+            class="profile-services-grid"
+            id="profileServicesGrid"
+          ></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+    <!-- ===== FOOTER ===== -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-icon">
+          <img
+            src="https://i.ibb.co/fGpKdPQB/logo.png"
+            alt="Logo"
+          />
+        </span>
+        <span style="color: var(--white)">HUB DIGITAL</span>
+      </div>
+
+      <p>Conectando profissionais, clientes e oportunidades.</p>
+
+      <div class="social">
+        <a href="#" aria-label="Instagram"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg"
+            alt="Instagram"
+        /></a>
+
+        <a href="#" aria-label="Facebook"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg"
+            alt="Facebook"
+        /></a>
+
+        <a href="#" aria-label="YouTube"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg"
+            alt="YouTube"
+        /></a>
+
+        <a href="#" aria-label="LinkedIn"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+            alt="LinkedIn"
+        /></a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Plataforma</h4>
+      <a href="#profissionais">Profissionais</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#sobre">Sobre</a>
+    </div>
+
+    <div>
+      <h4>Para você</h4>
+      <a href="#buscar">Encontrar profissional</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Projeto de Extensão — Inovação e Empreendedorismo</span>
+      <span>Poções - BA e região | 2026</span>
+    </div>
+  </div>
+</footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
